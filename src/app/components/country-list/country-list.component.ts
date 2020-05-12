@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Country } from 'src/app/data/model';
 import { FinancialsService } from 'src/app/services/financials.service';
+import { StateStoreService } from 'src/app/services/state-store.service';
 
 @Component({
   selector: 'app-country-list',
@@ -12,8 +13,8 @@ export class CountryListComponent implements OnInit {
   countrys:Country[];
   SelectedCountryId:number;
 
-  constructor(private financialsService:FinancialsService) {
-    //this.SelectedCountryId = 3;
+  constructor(private financialsService:FinancialsService, private stateStore:StateStoreService) {
+    
   }
 
   ngOnInit(): void {
@@ -23,7 +24,6 @@ export class CountryListComponent implements OnInit {
   }
 
   onChange(){
-
-  this.financialsService.selectCountry(this.SelectedCountryId);   
+    this.stateStore.setSelectedCountry(this.SelectedCountryId);   
   }
 }

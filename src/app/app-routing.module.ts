@@ -6,7 +6,6 @@ import { FundsHomeComponent } from './components/funds-home/funds-home.component
 const routes: Routes = [
 
   { path: 'stocks', component: StocksHomeComponent },
-
   { path: 'funds', component: FundsHomeComponent },
 
 ];
